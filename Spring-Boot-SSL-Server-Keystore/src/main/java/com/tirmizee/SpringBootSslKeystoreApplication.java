@@ -17,14 +17,14 @@ public class SpringBootSslKeystoreApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
-			
-			@Override
-            public boolean verify(String hostname, SSLSession session) {
-                return true;
-            }
-			
-        });
+//		HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+//			
+//			@Override
+//            public boolean verify(String hostname, SSLSession session) {
+//                return true;
+//            }
+//			
+//        });
 	}
 
 }
