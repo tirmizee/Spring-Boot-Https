@@ -13,7 +13,7 @@ public class PingController {
 	
 	@GetMapping(value = "/ping")
 	public String ping() {
-		return restTemplate.getForObject("https://localhost:8443/secure", String.class);
+		return restTemplate.getForObject("https://localhost:9000/secure", String.class);
 	}
 	
 }

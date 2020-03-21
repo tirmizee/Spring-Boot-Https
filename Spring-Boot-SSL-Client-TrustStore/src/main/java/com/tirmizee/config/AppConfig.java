@@ -1,13 +1,19 @@
 package com.tirmizee.config;
 
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
-import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class AppConfig {
+	
+	
 
 //	@Bean
 //	public RestTemplate restTemplate(RestTemplateBuilder builder) throws KeyManagementException, NoSuchAlgorithmException {
@@ -56,11 +62,13 @@ public class AppConfig {
 //	}
 	
 	@Bean
-    public RestTemplate restTemplate() {
-		HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-        factory.setConnectTimeout(3000);
-        factory.setReadTimeout(3000);
-        return new RestTemplate(factory);
+    public RestTemplate restTemplate(HttpComponentsClientHttpRequestFactory clientHttpRequestFactory) {
+		CloseableHttpClient httpClient = HttpClients.custom()
+	            .setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE)
+	            .build();   
+		clientHttpRequestFactory.setHttpClient(httpClient);
+		clientHttpRequestFactory.setConnectTimeout(40000);
+	        return new RestTemplate(clientHttpRequestFactory); 
     }
 	
 //	@Bean
