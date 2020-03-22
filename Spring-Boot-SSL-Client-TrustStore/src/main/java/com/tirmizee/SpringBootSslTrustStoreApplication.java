@@ -25,7 +25,7 @@ public class SpringBootSslTrustStoreApplication implements CommandLineRunner {
 	
 	static {
 	    ClassLoader classLoader = SpringBootSslTrustStoreApplication.class.getClassLoader();
-	    File file = new File(classLoader.getResource("truststore.jks").getFile());
+	    File file = new File(classLoader.getResource("jks/truststore.jks").getFile());
 	    String absolutePath = file.getAbsolutePath();
 	    System.setProperty("javax.net.ssl.trustStore",absolutePath);
 	    System.setProperty("javax.net.ssl.trustStorePassword", "clintstorepass");
@@ -40,8 +40,8 @@ public class SpringBootSslTrustStoreApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		URL myurl = new URL("https://172.20.10.4:9000/secure");
-		HttpsURLConnection.setDefaultHostnameVerifier(hostnameVerifier);
+		URL myurl = new URL("https://laptop-lcvemhb7:9000/secure");
+//		HttpsURLConnection.setDefaultHostnameVerifier(hostnameVerifier);
 		HttpsURLConnection httpURLConnection = (HttpsURLConnection) myurl.openConnection();
 		System.out.println( httpURLConnection.getResponseCode());
 	}
