@@ -64,7 +64,7 @@ public class AppConfig {
 	@Bean
     public RestTemplate restTemplate(HttpComponentsClientHttpRequestFactory clientHttpRequestFactory) {
 		CloseableHttpClient httpClient = HttpClients.custom()
-	            .setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE)
+//	            .setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE)
 	            .build();   
 		clientHttpRequestFactory.setHttpClient(httpClient);
 		clientHttpRequestFactory.setConnectTimeout(40000);

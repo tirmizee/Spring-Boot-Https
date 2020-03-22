@@ -15,3 +15,11 @@
 	-Djavax.net.ssl.trustStorePassword=clintstorepass
 	-Djavax.net.ssl.trustStoreType=JKS
 	-Djavax.net.debug=all
+	
+### Truststore
+
+	keytool -importcert -keystore truststore.jks -alias lcvemhb7 -file lcvemhb7-public.cer -storepass clintstorepass -noprompt
+	
+	keytool -importcert -keystore truststore.jks -alias local -file local-public.cer -storepass clintstorepass -noprompt
+	
+	
