@@ -5,10 +5,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootSslKeystoreApplication implements CommandLineRunner{
+public class SpringBootSslServerOneApplication implements CommandLineRunner{
 	
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootSslKeystoreApplication.class, args);
+		SpringApplication.run(SpringBootSslServerOneApplication.class, args);
 	}
 
 	@Override
