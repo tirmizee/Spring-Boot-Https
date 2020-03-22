@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.tirmizee</groupId>
-	<artifactId>Spring-Boot-SSL-Keystore</artifactId>
+	<artifactId>Spring-Boot-SSL-Server-One</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Spring-Boot-SSL-Server-Keystore</name>
 	<description>Demo project for Spring Boot</description>
