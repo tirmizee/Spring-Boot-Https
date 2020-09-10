@@ -1,4 +1,4 @@
-# Spring-Boot-Https
+# Spring-Boot-SSL-Certificates
 
 - alias คือ ชื่อ key
 - keyalg คือ algorithm ในการสร้าง key
